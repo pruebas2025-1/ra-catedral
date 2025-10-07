@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RA - QR → Modelo 3D (demo)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>body{font-family:sans-serif;margin:0;padding:0} #wrap{padding:12px}</style>
+    <!-- model-viewer for easy AR on mobile (Scene Viewer / Quick Look) -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <h2>Demo AR desde QR (modelo 3D)</h2>
+      <p>Escanea el QR que te dará la página del proyecto (o abre esta página desde el móvil). Si el navegador y el dispositivo lo permiten, pulsa el botón <em>View in AR</em> para colocar el modelo en el espacio real.</p>
+      <p><strong>Nota:</strong> para que funcione en AR sin marcador necesitas que este archivo (y el .glb) se sirvan via HTTPS (GitHub Pages sirve así).</p>
+
+      <h3>Modelo (ejemplo)</h3>
+      <!-- sample glb desde modelviewer dev (puedes reemplazar por tu propio catedral.glb alojado en GitHub Pages) -->
+      <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" alt="Catedral (sustituir)" ar ar-modes="webxr scene-viewer quick-look" camera-controls autoplay style="width:100%;max-width:720px;height:480px"></model-viewer>
+
+      <h3>Instrucciones rápidas para usar tu propio .glb</h3>
+      <ol>
+        <li>Descarga o crea un .glb de baja resolución y ponlo en la carpeta del proyecto.</li>
+        <li>Sube todo a GitHub (o Netlify). Activa GitHub Pages desde Settings → Pages.</li>
+        <li>Sustituye la URL del atributo <code>src</code> por <code>https://TUUSUARIO.github.io/TU_REPO/tu_modelo.glb</code>.</li>
+        <li>Genera un QR que apunte a la URL pública de esta página (por ejemplo <code>https://TUUSUARIO.github.io/TU_REPO/qr_version/</code>) y pégalo en tu mapa.</li>
+      </ol>
+
+      <p>Si tu móvil no ofrece el botón de AR, intenta abrir la página desde Chrome en Android (Scene Viewer) o Safari en iOS (Quick Look).</p>
+    </div>
+  </body>
+</html>
